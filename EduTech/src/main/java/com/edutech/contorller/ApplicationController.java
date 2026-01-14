@@ -25,7 +25,7 @@ public class ApplicationController {
 			return new ResponseEntity<>("Please enter the Last Name", HttpStatus.BAD_REQUEST);
 		}
 		if(user.getEmailid()==null||!service.isValidEmail(user.getEmailid())) {
-			return new ResponseEntity<>("Correct the emailID", HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>("Correct in the emailID", HttpStatus.BAD_REQUEST);
 		}
 		if(service.findByEmail(user.getEmailid())!=null) {
 			return new ResponseEntity<>("EmailId is Already exist", HttpStatus.BAD_REQUEST);
