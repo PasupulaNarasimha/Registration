@@ -41,10 +41,10 @@ public class ApplicationController {
 	public @ResponseBody ResponseEntity<?> display(@RequestBody Login login) {
 		User user = service.findByEmail(login.getEmailid());
 		if(user==null) {
-			return new ResponseEntity<>("Enter A valid EmailId", HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>("Correct the emailId", HttpStatus.BAD_REQUEST);
 		}
 		if(!user.getPassword().equals(login.getPassword())) {
-			return new ResponseEntity<>("Enter A valid password", HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>("Correct the password", HttpStatus.BAD_REQUEST);
 		}
 		return new ResponseEntity<>("Login Successfully", HttpStatus.OK);
 	}
